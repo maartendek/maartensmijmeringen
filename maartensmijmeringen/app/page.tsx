@@ -16,6 +16,9 @@ export default function Home() {
                     date={Date.now().toLocaleString()} 
                     image=""
                     link="blog" />
+                <aside>
+                    Menu
+                </aside>
             </div>
         </main>
     );

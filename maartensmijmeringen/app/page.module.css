@@ -11,6 +11,9 @@
   flex-direction: row;
   width: 100%;
 }
-.content div:first-child {
-  flex: 70;
+.content section {
+  flex: 72;
+}
+.content aside {
+  flex: 27;
 }
