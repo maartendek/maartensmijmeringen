@@ -4,6 +4,8 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-header: Georgia, Utopia, "Palatino Linotype", Palatino, serif;
+  --font-body: Arial, Tahoma, Helvetica, FreeSans, sans-serif;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -98,6 +100,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-header);
 }
 
 @media (prefers-color-scheme: dark) {

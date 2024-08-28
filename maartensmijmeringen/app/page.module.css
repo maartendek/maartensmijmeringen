@@ -1,7 +1,16 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  margin: 0 auto;
+  width: 764px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.content div:first-child {
+  flex: 70;
 }
