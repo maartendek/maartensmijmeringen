@@ -1,7 +1,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Header } from "@/componenten/header/header";
-import { BlogItem } from "@/componenten/Blog/blog-item";
+import { BlogItem } from "@/componenten/blog";
+import { Footer } from "@/componenten/footer/footer";
 
 const myTitle:string = "Test title";
 const myBody: string = "My body text";
@@ -20,6 +21,7 @@ export default function Home() {
                     Menu
                 </aside>
             </div>
+            <Footer />
         </main>
     );
 }
