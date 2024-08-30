@@ -1,24 +1,26 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "../../page.module.css";
 import { Header } from "@/componenten/header/header";
 import { BlogItem, BlogMenu } from "@/componenten/blog";
 import { Footer } from "@/componenten/footer/footer";
 import { getBlogs } from "@/api/rest";
 
-const Home = async () => {
+const Home = async ({ params }: { params: { slug: string } }) => {
     const blogs = await getBlogs();
-    console.log('XXX', JSON.stringify(blogs.props.blogs));
-    const blog = blogs.props.blogs[0].attributes;
+
+    const blog = blogs.props.blogs.find(blog => blog.attributes.slug === params.slug);
+
+    // console.log('bloggie', blog)
     return (
         <main className={styles.main}>
             <Header />
             <div className={styles.content}>
                 { blog && (
-                    <BlogItem title={blog.title}
-                        body={blog.html}
-                        published={blog.published} 
+                    <BlogItem title={blog.attributes.title}
+                        body={blog.attributes.html}
+                        published={blog.attributes.published} 
                         image=""
-                        slug={blog.slug} />
+                        slug={blog.attributes.slug} />
                 )}
                 <aside>
                     <BlogMenu blogs={blogs.props.blogs}></BlogMenu>

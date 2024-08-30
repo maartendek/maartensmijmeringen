@@ -45,6 +45,13 @@ export type Image = Data<
   }
 >;
 
-export type Blog = Data<BlogItemProps>;
+export type Blog = Data<{
+  html: string;
+  image?: string;
+  published: string;
+  slug: string;
+  title: string;
+  updated?: string;
+}>;
 
 export type BlogResponse = Response<Blog[]>;

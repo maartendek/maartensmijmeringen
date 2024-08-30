@@ -16,9 +16,6 @@
       "type": "string",
       "required": true
     },
-    "body": {
-      "type": "blocks"
-    },
     "published": {
       "type": "date"
     },
@@ -31,11 +28,15 @@
       "unique": true
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "html": {
+      "type": "text"
     }
   }
 }
