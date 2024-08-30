@@ -5,9 +5,8 @@ import { BlogItem, BlogMenu } from "@/componenten/blog";
 import { Footer } from "@/componenten/footer/footer";
 import { getBlogs } from "@/api/rest";
 
-const Home = async () => {
+const BlogHome = async () => {
     const blogs = await getBlogs();
-    console.log('XXX', JSON.stringify(blogs.props.blogs));
     const blog = blogs.props.blogs[0].attributes;
     return (
         <main className={styles.main}>
@@ -29,4 +28,4 @@ const Home = async () => {
     );
 };
 
-export default Home;
+export default BlogHome;

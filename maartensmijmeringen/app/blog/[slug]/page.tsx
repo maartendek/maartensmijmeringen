@@ -5,7 +5,7 @@ import { BlogItem, BlogMenu } from "@/componenten/blog";
 import { Footer } from "@/componenten/footer/footer";
 import { getBlogs } from "@/api/rest";
 
-const Home = async ({ params }: { params: { slug: string } }) => {
+const BlogPage = async ({ params }: { params: { slug: string } }) => {
     const blogs = await getBlogs();
 
     const blog = blogs.props.blogs.find(blog => blog.attributes.slug === params.slug);
@@ -23,7 +23,7 @@ const Home = async ({ params }: { params: { slug: string } }) => {
                         slug={blog.attributes.slug} />
                 )}
                 <aside>
-                    <BlogMenu blogs={blogs.props.blogs}></BlogMenu>
+                    <BlogMenu blogs={blogs.props.blogs} slug={params.slug}></BlogMenu>
                 </aside>
             </div>
             <Footer />
@@ -31,4 +31,4 @@ const Home = async ({ params }: { params: { slug: string } }) => {
     );
 };
 
-export default Home;
+export default BlogPage;

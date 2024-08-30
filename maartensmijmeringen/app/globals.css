@@ -114,3 +114,9 @@ h3 {
     color-scheme: dark;
   }
 }
+
+/** blogger overwrites */
+.tr-caption {
+  padding-bottom: 1rem;
+  font-size: .8rem;
+}

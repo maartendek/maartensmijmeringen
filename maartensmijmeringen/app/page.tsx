@@ -7,7 +7,6 @@ import { getBlogs } from "@/api/rest";
 
 const Home = async () => {
     const blogs = await getBlogs();
-    console.log('XXX', JSON.stringify(blogs.props.blogs));
     const blog = blogs.props.blogs[0].attributes;
     return (
         <main className={styles.main}>
@@ -21,7 +20,7 @@ const Home = async () => {
                         slug={blog.slug} />
                 )}
                 <aside>
-                    <BlogMenu blogs={blogs.props.blogs}></BlogMenu>
+                    <BlogMenu slug={blog.slug} blogs={blogs.props.blogs}></BlogMenu>
                 </aside>
             </div>
             <Footer />

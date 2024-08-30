@@ -6,3 +6,44 @@
 .mm-blog-menu li {
     list-style: none;
 }
+.mm-blog-menu ul {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+}
+.mm-blog-menu a {
+    text-decoration: underline;
+    margin-bottom: .5rem;
+    display: block;
+}
+.mm-blog-menu a.active {
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+.mm-blog-menu a + ul {
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+}
+.mm-blog-menu a.toggleLink {
+    text-decoration: none;
+    cursor: pointer;
+}
+.mm-blog-menu a.toggleLink:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    border: .3rem solid;
+    border-color: #fff #fff #fff #000;
+    margin-right: .5rem;
+    transition: rotate .2s ease-in-out;
+}
+.mm-blog-menu a.toggleLink.open:before {
+    content: "";
+    rotate: 90deg;
+}
+.mm-blog-menu a.toggleLink.open + ul {
+    max-height: 900px;
+}
+.mm-blog-menu a.toggleLink.close + ul {
+    max-height: 0px;
+}

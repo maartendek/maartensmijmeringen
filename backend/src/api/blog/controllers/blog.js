@@ -31,19 +31,19 @@ module.exports = createCoreController('api::blog.blog', ({ strapi }) => ({
                   // shows that first 50 blogs are internal blogger items
                   console.log(i, ' ', convertTitle(b.title._text))
               
-                  if (i === 51) {
+                  if (i > 50) {
               
-                      const entry = await strapi.entityService.create('api::blog.blog', {
-                          data: {
-                              title: b.title._text,
-                              html: b.content._text,
-                              published: b.published._text,
-                              slug: convertTitle(b.title._text),
-                          },
-                        });
+                    //   const entry = await strapi.entityService.create('api::blog.blog', {
+                    //       data: {
+                    //           title: b.title._text,
+                    //           html: b.content._text,
+                    //           published: b.published._text,
+                    //           slug: convertTitle(b.title._text),
+                    //       },
+                    //     });
               
-                        console.log('entered entry', entry)
-                        ctx.body = 'you did it!';
+                    //     console.log('entered entry', entry.title)
+                    //     ctx.body = 'you did it!';
                   }
                 })
               
