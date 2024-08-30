@@ -23,7 +23,7 @@ const Home = async () => {
                     <BlogMenu slug={blog.slug} blogs={blogs.props.blogs}></BlogMenu>
                 </aside>
             </div>
-            <Footer />
+            <Footer date={blog.published} />
         </main>
     );
 };
