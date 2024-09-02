@@ -14,8 +14,8 @@ export type BlogMenuYearProps = {
   
 export const BlogMenuYear: FC<BlogMenuYearProps> = ({ blogs, slug, year }) => {
 
-    const yearBlogs = blogs.filter(b => new Date(b.attributes.published).getFullYear() === year);
-    const hasCurrentBlog: boolean = !!yearBlogs.find(b => b.attributes.slug === slug);
+    const yearBlogs = blogs.filter(b => new Date(b.published).getFullYear() === year);
+    const hasCurrentBlog: boolean = !!yearBlogs.find(b => b.slug === slug);
     let loopMonth: number;
     const [isOpen, setIsOpen] = useState(hasCurrentBlog);
 
@@ -27,7 +27,7 @@ export const BlogMenuYear: FC<BlogMenuYearProps> = ({ blogs, slug, year }) => {
             <ul key={year}>
                 { yearBlogs.map((blog: Blog) => {
 
-                    const thisDate = new Date(blog.attributes.published);
+                    const thisDate = new Date(blog.published);
                     const thisMonth = thisDate.getMonth();
                 
                     if (thisMonth !== loopMonth) {

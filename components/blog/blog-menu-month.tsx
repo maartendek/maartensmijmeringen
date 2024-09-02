@@ -15,11 +15,11 @@ export type BlogMenuMonthProps = {
 export const BlogMenuMonth: FC<BlogMenuMonthProps> = ({ month, year, blogs, slug }) => {
 
     const monthBlogs = blogs.filter(b => {
-        const date = new Date(b.attributes.published);
+        const date = new Date(b.published);
         return date.getFullYear() === year && date.getMonth() === month;
     });
-    const hasCurrentBlog: boolean = !!monthBlogs.find(b => b.attributes.slug === slug);
-    const date = new Date(monthBlogs[0].attributes.published);
+    const hasCurrentBlog: boolean = !!monthBlogs.find(b => b.slug === slug);
+    const date = new Date(monthBlogs[0].published);
     const monthString: string = new Intl.DateTimeFormat("nl-NL", { month: 'long'}).format(date);
     const [isOpen, setIsOpen] = useState(hasCurrentBlog);
     
@@ -30,8 +30,8 @@ export const BlogMenuMonth: FC<BlogMenuMonthProps> = ({ month, year, blogs, slug
                 onClick={e => setIsOpen(!isOpen)}>{monthString}</a>
             <ul key={`${year}-${month}`}>
                 { monthBlogs.map((blog: Blog) => (
-                    <li key={blog.id}>
-                        <Link href={`/blog/${blog.attributes.slug}`} className={`${slug === blog.attributes.slug && 'active'}`}>{blog.attributes.title}</Link>
+                    <li key={blog.slug}>
+                        <Link href={`/blog/${blog.slug}`} className={`${slug === blog.slug && 'active'}`}>{blog.title}</Link>
                     </li>
                 ))}
             </ul>

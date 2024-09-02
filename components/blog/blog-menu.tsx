@@ -14,8 +14,8 @@ let loopYear: number;
 
 export const BlogMenu: FC<BlogMenuProps> = ({ blogs, slug }) => {
     const sortedBlogs = blogs.sort((a: Blog, b: Blog) => {
-        const aDate = Date.parse(b.attributes.published);
-        const bDate = Date.parse(b.attributes.published);
+        const aDate = Date.parse(b.published);
+        const bDate = Date.parse(b.published);
         return bDate - aDate ;
     });
 
@@ -24,7 +24,7 @@ export const BlogMenu: FC<BlogMenuProps> = ({ blogs, slug }) => {
             <h3>Archief</h3>
             <ul key="start">
                 { sortedBlogs.map((blog: Blog, index: number) => {
-                    const thisDate = new Date(blog.attributes.published);
+                    const thisDate = new Date(blog.published);
                     const thisYear = thisDate.getUTCFullYear();
                 
                     if (thisYear !== loopYear) {
