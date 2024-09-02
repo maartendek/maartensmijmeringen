@@ -1,5 +1,6 @@
+import { GetStaticProps } from "next";
+import { Blog, BlogResponse } from "./types";
 const convert = require('xml-js');
-import { Blog } from '@/api/types';
 import { promises as fs } from 'fs';
 
 export const getBlogs = async (): Promise<Blog[]> => {
@@ -26,8 +27,9 @@ export const getBlogs = async (): Promise<Blog[]> => {
       
         }
     })
-
+    console.log('after lop',blogsArray.length)
     return blogsArray
+
         
 };
 
