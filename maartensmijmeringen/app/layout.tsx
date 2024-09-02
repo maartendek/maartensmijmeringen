@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Maartens Mijmeringen",
-    description: "Backup van Maartens Mijmeringen uit de jaren 0.",
+    description: "Archief van Maartens Mijmeringen uit de jaren 0.",
+    keywords: "maarten,dekker,archief"
 };
 
 export default function RootLayout({

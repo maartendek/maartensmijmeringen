@@ -1,7 +1,8 @@
-import { FC } from "react";
+"use client"
+
+import { FC, useEffect } from "react";
 import Image from "next/image";
 import styles from './blog-item.module.css';
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 export type BlogItemProps = {
   body: string;
@@ -13,6 +14,17 @@ export type BlogItemProps = {
 };
 
 export const BlogItem: FC<BlogItemProps> = ({ title, body }) => {
+    // set title
+    useEffect(() => {
+        if (title) {
+            const description = document.querySelector('meta[name="description"]')?.getAttribute("content");
+            const keywords = document.querySelector('meta[name="keywords"]')?.getAttribute("content");
+            document.title = `${title} - Maartens Mijmeringen`;
+            document.querySelector('meta[name="description"]')?.setAttribute("content", `${title} - ${description}`);
+            document.querySelector('meta[name="keywords"]')?.setAttribute("content", `${title},${keywords}`);
+        }
+    }, [title]);
+      
     return (
         <section className={styles['mm-blog-item']}>
             <h1>{title}</h1>

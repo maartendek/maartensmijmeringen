@@ -58,8 +58,6 @@ describe('BlogMenuYear', () => {
     it('renders the correct number of BlogMenuMonth components', () => {
         render(<BlogMenuYear {...defaultProps} />);
         const blogMenuMonths = screen.getAllByRole('list');
-        console.log(blogMenuMonths.length)
-
         expect(blogMenuMonths.length).toBe(3); // January and February AND 2023
     });
 

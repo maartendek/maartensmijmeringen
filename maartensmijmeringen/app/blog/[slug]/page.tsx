@@ -1,9 +1,16 @@
-import Image from "next/image";
 import styles from "../../page.module.css";
 import { Header } from "@/componenten/header/header";
 import { BlogItem, BlogMenu } from "@/componenten/blog";
 import { Footer } from "@/componenten/footer/footer";
 import { getBlogs } from "@/api/rest";
+
+export async function generateStaticParams() {
+    const blogs = await getBlogs();
+   
+    return blogs.props.blogs.map((post) => ({
+        slug: post.attributes.slug,
+    }))
+}
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
     const blogs = await getBlogs();
