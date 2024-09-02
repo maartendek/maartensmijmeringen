@@ -4,22 +4,16 @@ import { BlogMenuMonth, BlogMenuMonthProps } from './blog-menu-month';
 
 const mockBlogs = [
     {
-        id: 1,
-        attributes: {
-            published: '2023-08-01T00:00:00Z',
-            slug: 'blog-1',
-            title: 'Blog 1',
-            html: 'body'
-        }
+        published: '2023-08-01T00:00:00Z',
+        slug: 'blog-1',
+        title: 'Blog 1',
+        html: 'body'
     },
     {
-        id: 2,
-        attributes: {
-            published: '2023-08-15T00:00:00Z',
-            slug: 'blog-2',
-            title: 'Blog 2',
-            html: 'body'
-        }
+        published: '2023-08-15T00:00:00Z',
+        slug: 'blog-2',
+        title: 'Blog 2',
+        html: 'body'
     }
 ];
 

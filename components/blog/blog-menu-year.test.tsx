@@ -4,31 +4,22 @@ import { Blog } from '@/api/types';
 
 const mockBlogs: Blog[] = [
     {
-        id: 1,
-        attributes: {
-            published: '2023-01-15T00:00:00Z',
-            slug: 'blog-1',
-            html: '',
-            title: 'Blog 1',
-        },
+        published: '2023-01-15T00:00:00Z',
+        slug: 'blog-1',
+        html: '',
+        title: 'Blog 1',
     },
     {
-        id: 2,
-        attributes: {
-            published: '2023-02-20T00:00:00Z',
-            slug: 'blog-2',
-            html: '',
-            title: 'Blog 2',
-        },
+        published: '2023-02-20T00:00:00Z',
+        slug: 'blog-2',
+        html: '',
+        title: 'Blog 2',
     },
     {
-        id: 3,
-        attributes: {
-            published: '2022-03-10T00:00:00Z',
-            slug: 'blog-3',
-            html: '',
-            title: 'Blog 3',
-        },
+        published: '2022-03-10T00:00:00Z',
+        slug: 'blog-3',
+        html: '',
+        title: 'Blog 3',
     },
 ];
 
