@@ -10,7 +10,6 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
     const blog = blogs.props.blogs.find(blog => blog.attributes.slug === params.slug);
 
-    // console.log('bloggie', blog)
     return (
         <main className={styles.main}>
             <Header />
@@ -26,7 +25,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
                     <BlogMenu blogs={blogs.props.blogs} slug={params.slug}></BlogMenu>
                 </aside>
             </div>
-            <Footer />
+            <Footer date={blog?.attributes.published} />
         </main>
     );
 };
