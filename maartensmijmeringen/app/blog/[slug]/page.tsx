@@ -1,7 +1,7 @@
 import styles from "../../page.module.css";
-import { Header } from "@/componenten/header/header";
-import { BlogItem, BlogMenu } from "@/componenten/blog";
-import { Footer } from "@/componenten/footer/footer";
+import { Header } from "@/components/header/header";
+import { BlogItem, BlogMenu } from "@/components/blog";
+import { Footer } from "@/components/footer/footer";
 import { getBlogs } from "@/api/rest";
 
 export async function generateStaticParams() {

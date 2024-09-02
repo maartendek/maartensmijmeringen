@@ -1,4 +1,4 @@
-import { BlogItemProps } from "@/componenten/blog";
+import { BlogItemProps } from "@/components/blog";
 
 export type Response<D = null> = {
   data: D;
