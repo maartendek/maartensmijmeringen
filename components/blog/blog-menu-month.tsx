@@ -1,9 +1,9 @@
 "use client"
 
-import { Blog } from "@/api/types";
 import { FC, useState } from "react";
 import styles from './blog-menu.module.css';
 import Link from "next/link";
+import { Blog } from "./types";
 
 export type BlogMenuMonthProps = {
     blogs: Blog[],

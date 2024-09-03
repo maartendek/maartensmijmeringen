@@ -1,9 +1,7 @@
 import { FC, PointerEvent } from "react";
-import Image from "next/image";
 import styles from './blog-menu.module.css';
-import { Blog } from "@/api/types";
-import Link from "next/link";
 import { BlogMenuYear } from "./blog-menu-year";
+import { Blog } from "./types";
 
 export type BlogMenuProps = {
   blogs: Blog[],

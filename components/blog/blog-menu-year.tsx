@@ -1,10 +1,10 @@
 "use client"
 
-import { Blog } from "@/api/types";
 import { FC, useEffect, useState } from "react";
 import styles from './blog-menu.module.css';
 import Link from "next/link";
 import { BlogMenuMonth } from "./blog-menu-month";
+import { Blog } from "./types";
 
 export type BlogMenuYearProps = {
     blogs: Blog[],
