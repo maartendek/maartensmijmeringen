@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BlogSearch, BlogSearchProps } from './blog-search';
 import { Blog } from './types';
-import { FC } from 'react';
 
 const mockBlogs: Blog[] = [
     { title: 'First Blog', slug: 'first-blog', html: '', published: '2023-01-15T00:00:00Z', },
@@ -10,6 +9,27 @@ const mockBlogs: Blog[] = [
     { title: 'Another Blog', slug: 'another-blog', html: '', published: '2023-01-15T00:00:00Z', },
 ];
 
+// Mock useRouter:
+jest.mock("next/navigation", () => ({
+    usePathname() {
+        return {
+            prefetch: () => null
+        };
+    },
+    useRouter() {
+        return {
+            prefetch: () => null,
+            push: () => null,
+        };
+    },
+    useSearchParams() {
+        return {
+            prefetch: () => null,
+            get: () => "",
+        };
+    }
+}));
+  
 const renderComponent = (props: Partial<BlogSearchProps> = {}) => {
     const defaultProps: BlogSearchProps = {
         blogs: mockBlogs,
