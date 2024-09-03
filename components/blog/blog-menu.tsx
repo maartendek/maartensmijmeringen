@@ -18,7 +18,7 @@ export const BlogMenu: FC<BlogMenuProps> = ({ blogs, slug }) => {
     });
 
     return (
-        <section className={styles['mm-blog-menu']}>
+        <div className={styles['mm-blog-menu']}>
             <h3>Archief</h3>
             <ul key="start">
                 { sortedBlogs.map((blog: Blog, index: number) => {
@@ -33,7 +33,7 @@ export const BlogMenu: FC<BlogMenuProps> = ({ blogs, slug }) => {
                     }
                 })}
             </ul>
-        </section>
+        </div>
     );
 };
 

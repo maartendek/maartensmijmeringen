@@ -26,10 +26,8 @@ export const getBlogs = async (): Promise<Blog[]> => {
       
         }
     })
-    console.log('after lop',blogsArray.length)
-    return blogsArray
 
-        
+    return blogsArray;    
 };
 
 const convertTitleToSlug = (str: string) => {

@@ -3,14 +3,18 @@
     width: 100%; 
 }
 .mm-blog-menu ul,
-.mm-blog-menu li {
+.mm-blog-menu li,
+.mm-blog-search ul,
+.mm-blog-search li {
     list-style: none;
 }
-.mm-blog-menu ul {
+.mm-blog-menu ul,
+.mm-blog-search ul {
     margin-left: 1rem;
     font-size: 0.8rem;
 }
-.mm-blog-menu a {
+.mm-blog-menu a,
+.mm-blog-search a {
     text-decoration: underline;
     margin-bottom: .5rem;
     display: block;
@@ -46,4 +50,10 @@
 }
 .mm-blog-menu a.toggleLink.close + ul {
     max-height: 0px;
+}
+.mm-blog-search {
+    margin-top: 2rem;
+}
+.mm-blog-search ul {
+    margin: 1rem 0;
 }
