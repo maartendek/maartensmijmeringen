@@ -1,5 +1,4 @@
-import { GetStaticProps } from "next";
-import { Blog, BlogResponse } from "./types";
+import { Blog } from "../components/blog/types";
 const convert = require('xml-js');
 import { promises as fs } from 'fs';
 

@@ -1,9 +1,8 @@
 import styles from "../../page.module.css";
 import { Header } from "@/components/header/header";
-import { BlogItem, BlogMenu } from "@/components/blog";
+import { Blog, BlogItem, BlogMenu } from "@/components/blog";
 import { Footer } from "@/components/footer/footer";
 import { getBlogs } from "@/api/rest";
-import { Blog } from "@/api/types";
 
 export async function generateStaticParams() {
     const blogs = await getBlogs();
@@ -16,7 +15,6 @@ export async function generateStaticParams() {
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
     const blogs: Blog[] = await getBlogs();
     const blog: Blog | undefined = blogs ? blogs.find(blog => blog.slug === params.slug) : undefined;
-    console.log('XCX', blogs?.length, blogs)
     return (
         <main className={styles.main}>
             <Header />
