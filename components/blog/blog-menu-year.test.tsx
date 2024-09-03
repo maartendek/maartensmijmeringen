@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BlogMenuYear, BlogMenuYearProps } from './blog-menu-year';
-import { Blog } from '@/api/types';
+import { Blog } from './types';
 
 const mockBlogs: Blog[] = [
     {

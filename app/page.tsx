@@ -1,14 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Header } from "@/components/header/header";
-import { BlogItem, BlogMenu, Blog } from "@/components/blog";
+import { BlogItem, BlogMenu, Blog, BlogSearch } from "@/components/blog";
 import { Footer } from "@/components/footer/footer";
 import { getBlogs } from "@/api/rest";
+import { Suspense } from "react";
 
 const Home = async () => {
     const blogs: Blog[] = await getBlogs();
     const blog: Blog | undefined = blogs ? blogs[0] : undefined;
-    console.log('SSS', blogs)
+    
     return (
         <main className={styles.main}>
             <Header />
@@ -24,6 +25,9 @@ const Home = async () => {
                         )}
                         <aside>
                             <BlogMenu slug={blog.slug} blogs={blogs}></BlogMenu>
+                            <Suspense>
+                                <BlogSearch blogs={blogs}></BlogSearch>
+                            </Suspense>
                         </aside>
                     </div>
                     <Footer date={blog.published} />
